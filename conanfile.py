@@ -4,17 +4,16 @@ import shutil
 class AisparserConan(ConanFile):
     name = "aisparser"
     version = "1.10"
-    license = "FREE"
+    license = "MIT"
     author = "Manuel Freiholz"
     url = "https://github.com/insaneFactory/conan-aisparser"
     description = ""
-    topics = ("ais", "parser", "mil", "nato", "stanag")
+    topics = ("ais", "parser", "mil", "nato", "stanag", "nmea0183")
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False]}
     default_options = "shared=False"
     generators = "cmake"
     exports_sources = "CMakeLists.txt"
-    source_subfolder = "source_subfolder"
 
     def source(self):
         self.run("git clone https://github.com/bcl/aisparser.git")
