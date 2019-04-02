@@ -14,6 +14,9 @@ class AisparserConan(ConanFile):
     default_options = "shared=False"
     generators = "cmake"
     exports_sources = "CMakeLists.txt"
+	build_requires = (
+		"cmake_installer/3.12.1@conan/stable"
+	)
 
     def source(self):
         self.run("git clone https://github.com/bcl/aisparser.git")
