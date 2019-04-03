@@ -7,16 +7,16 @@ class AisparserConan(ConanFile):
     license = "MIT"
     author = "Manuel Freiholz"
     url = "https://github.com/insaneFactory/conan-aisparser"
-    description = ""
+    description = "Library to parse AIS messages from NMEA0183 protocol."
     topics = ("ais", "parser", "mil", "nato", "stanag", "nmea0183")
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False]}
     default_options = "shared=False"
     generators = "cmake"
     exports_sources = "CMakeLists.txt"
-	build_requires = (
-		"cmake_installer/3.12.1@conan/stable"
-	)
+    build_requires = (
+        "cmake_installer/3.12.1@conan/stable"
+    )
 
     def source(self):
         self.run("git clone https://github.com/bcl/aisparser.git")
